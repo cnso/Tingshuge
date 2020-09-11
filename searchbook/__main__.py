@@ -15,6 +15,7 @@ def search(keyword):
     res = requests.post("http://m.tingshuge.com/search.asp", keyword)
     res.encoding = "gbk"
     root = pq(res.text)
+    print(keyword)
     list = root(".new_tab_img")("li")
     books = []
     for book in list.items():
